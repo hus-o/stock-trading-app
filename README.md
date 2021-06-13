@@ -1,5 +1,8 @@
 # stock-trading-app
-## Instuctions
+
+## Team Portfol.io: Igor, Keir, Huseyin, Rorie
+
+## Instructions
 * You will need 2 terminal sessions, make sure you're in the project folder
 
 * To install all required packages:
@@ -24,15 +27,54 @@ We were aiming to make a chart with different (user selected) stocks, showing th
 * Portfolio value is then tracked based on how much shares you own of particular companies at a given price  
 
 ## Project Tree
-
+├───trading  
+│   ├───accounts  
+│   ├───frontend  
+│   │   ├───migrations  
+│   │   ├───src  
+│   │   │   ├───components  
+│   │   │   │   ├───containers  
+│   │   │   │   └───pages  
+│   │   │   ├───public  
+│   │   │   └───tests  
+│   │   ├───static  
+│   │   │   └───frontend  
+│   │   └───templates  
+│   │       └───frontend  
+│   ├───static  
+│   ├───templates  
+│   │   └───registration  
+│   ├───trader  
+│   │   └───migrations  
+│   └───trading  
+└───__mocks__  
 
 ## Technologys
+* React  
+* NPM  
+* Webpack  
+* Babel  
+* Axios  
+* Tradingview Widget  
+* Bootstrap  
+* Pipenv  
+* Django  
+* Django REST Framework  
+* SQLite  
+* Unittest  
+* Jest  
+* Enzyme  
+## Database schemas
+### Stocks
+| ID | stock_symbol | stocks_bought_numer | bought_at_price | bought_at_time | userID_id (FK) |
+|----|--------------|---------------------|-----------------|----------------|----------------|
 
+### Users
+We extended the standard Django user table by including the balance column
 
-## Wireframe
-sql/postgres database  
-django backend  
-react frontend  
+| ID | password | last_login | is_superuser | username | first_name | last_name | email | is_staff | is_active | date_joined | balance |
+|----|----------|------------|--------------|----------|------------|-----------|-------|----------|-----------|-------------|---------|
+
 ## User journeys
 As a User, I want to be able to create an account so I can login.  
 
@@ -58,16 +100,3 @@ I can pick to view the chart (provided by TradingView widget) which has my watch
 
 On logout the balance and watchlist is persistent so when user logs back in they are able to see everything as it were. The only variable would be the portfolio value which is dictated by the current pricing of stocks they hold.  
 
-## Database schemas
-### Stocks
-| Id | user_id (fk) | Stock | Amount |
-|:--:|:------------:|:-----:|:------:|
-|  1 |       1      |  APPL |   10   |
-|  2 |       1      |  MSFT |    5   |
-
-### Users
-| id |        email       |     password    |   username  | balance |
-|:--:|:------------------:|:---------------:|:-----------:|:-------:|
-|  1 |    bob@gmail.com   |    ***    |  bob_smith  |   10000 |
-|  2 |   kim@yahoo.co.uk  |    ***    |     Kim     |   500   |
-|  3 | spam@microsoft.com | *** | test_user_1 |    0    |
