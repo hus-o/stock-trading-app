@@ -11,6 +11,7 @@ djangorestframework = "*"
 django-rest-knox = "*"
 coverage = "*"
 pylint = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"

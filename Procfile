@@ -1,2 +1,2 @@
 release: python trading/manage.py migrate
-web: gunicorn trading.wsgi --log-file -
+web: gunicorn stock-trading-app.wsgi --log-file -
